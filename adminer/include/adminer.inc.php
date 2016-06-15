@@ -101,6 +101,15 @@ class Adminer {
 		return true;
 	}
 
+	/** Render custom breadcrumbs section of the page
+	 * @param mixed array("key" => "link", "key2" => array("link", "desc")), null for nothing, false for driver only, true for driver and server
+	 * @param string $title
+	 * @return bool true to render default
+	 */
+	function breadcrumbs($breadcrumb, $title) {
+		return true;
+	}
+
 	/** Get URLs of the CSS files
 	* @return array of strings
 	*/

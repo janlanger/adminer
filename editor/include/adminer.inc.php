@@ -61,6 +61,10 @@ class Adminer {
 		return true;
 	}
 
+	function breadcrumbs($breadcrumb, $title) {
+		return true;
+	}
+
 	function css() {
 		$return = array();
 		$filename = "adminer.css";
