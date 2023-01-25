@@ -9,7 +9,7 @@ function adminer_object() {
 	}
 	
 	// enable extra drivers just by including them
-	//~ include "../plugins/drivers/simpledb.php";
+	//~ include ROOT_DIR . "/../plugins/drivers/simpledb.php";
 	
 	$plugins = array(
 		// specify enabled plugins here
@@ -43,4 +43,4 @@ function adminer_object() {
 }
 
 // include original Adminer or Adminer Editor (usually named adminer.php)
-include "./index.php";
+include ROOT_DIR . "/./index.php";

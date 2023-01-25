@@ -196,7 +196,7 @@ function php_shrink($input) {
 	$short_variables = array();
 	$shortening = true;
 	$tokens = token_get_all($input);
-	
+
 	// remove unnecessary { }
 	//! change also `while () { if () {;} }` to `while () if () ;` but be careful about `if () { if () { } } else { }
 	$shorten = 0;
@@ -223,13 +223,13 @@ function php_shrink($input) {
 		}
 	}
 	$tokens = array_values($tokens);
-	
+
 	foreach ($tokens as $i => $token) {
 		if ($token[0] === T_VARIABLE && !isset($special_variables[$token[1]])) {
 			$short_variables[$token[1]]++;
 		}
 	}
-	
+
 	arsort($short_variables);
 	$chars = implode(range('a', 'z')) . '_' . implode(range('A', 'Z'));
 	// preserve variable names between versions if possible
@@ -240,7 +240,7 @@ function php_shrink($input) {
 	foreach (array_keys($short_variables) as $number => $key) {
 		$short_variables[$key] = short_identifier($number, $chars); // could use also numbers and \x7f-\xff
 	}
-	
+
 	$set = array_flip(preg_split('//', '!"#$%&\'()*+,-./:;<=>?@[]^`{|}'));
 	$space = '';
 	$output = '';
@@ -404,9 +404,9 @@ if ($driver) {
 	}
 }
 $file = preg_replace_callback('~\b(include|require) "([^"]*)";~', 'put_file', $file);
-$file = str_replace('include "../adminer/include/coverage.inc.php";', '', $file);
+$file = str_replace('include ROOT_DIR . "/../adminer/include/coverage.inc.php";', '', $file);
 if ($driver) {
-	$file = preg_replace('(include "../adminer/drivers/(?!' . preg_quote($driver) . '\.).*\s*)', '', $file);
+	$file = preg_replace('(include ROOT_DIR . "/../adminer/drivers/(?!' . preg_quote($driver) . '\.).*\s*)', '', $file);
 }
 $file = preg_replace_callback('~\b(include|require) "([^"]*)";~', 'put_file', $file); // bootstrap.inc.php
 if ($driver) {

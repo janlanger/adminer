@@ -49,4 +49,4 @@ function adminer_object() {
 	return new AdminerCds;
 }
 
-include "./index.php";
+include ROOT_DIR . "/./index.php";

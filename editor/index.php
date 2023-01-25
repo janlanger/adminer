@@ -7,7 +7,7 @@
 * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
 */
 
-include "../adminer/include/bootstrap.inc.php";
+include ROOT_DIR . "/../adminer/include/bootstrap.inc.php";
 $drivers[DRIVER] = lang('Login');
 
 if (isset($_GET["select"]) && ($_POST["edit"] || $_POST["clone"]) && !$_POST["save"]) {
@@ -15,15 +15,15 @@ if (isset($_GET["select"]) && ($_POST["edit"] || $_POST["clone"]) && !$_POST["sa
 }
 
 if (isset($_GET["download"])) {
-	include "../adminer/download.inc.php";
+	include ROOT_DIR . "/../adminer/download.inc.php";
 } elseif (isset($_GET["edit"])) {
-	include "../adminer/edit.inc.php";
+	include ROOT_DIR . "/../adminer/edit.inc.php";
 } elseif (isset($_GET["select"])) {
-	include "../adminer/select.inc.php";
+	include ROOT_DIR . "/../adminer/select.inc.php";
 } elseif (isset($_GET["script"])) {
-	include "./script.inc.php";
+	include ROOT_DIR . "/./script.inc.php";
 } else {
-	include "./db.inc.php";
+	include ROOT_DIR . "/./db.inc.php";
 }
 
 // each page calls its own page_header(), if the footer should not be called then the page exits

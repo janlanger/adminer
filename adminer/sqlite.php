@@ -8,4 +8,4 @@ function adminer_object() {
 	));
 }
 
-include "./index.php";
+include ROOT_DIR . "/./index.php";
