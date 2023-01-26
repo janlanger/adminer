@@ -39,7 +39,7 @@ class Adminer {
 	function bruteForceKey() {
 		return $_SERVER["REMOTE_ADDR"];
 	}
-	
+
 	/** Get server name displayed in breadcrumbs
 	* @param string
 	* @return string HTML code or null
@@ -128,7 +128,7 @@ class Adminer {
 		echo "<p><input type='submit' value='" . lang('Login') . "'>\n";
 		echo checkbox("auth[permanent]", 1, $_COOKIE["adminer_permanent"], lang('Permanent login')) . "\n";
 	}
-	
+
 	/** Get login form field
 	* @param string
 	* @param string HTML
@@ -480,7 +480,7 @@ class Adminer {
 		echo "</script>\n";
 		echo "</div></fieldset>\n";
 	}
-	
+
 	/** Print command box in select
 	* @return bool whether to print default commands
 	*/
@@ -961,12 +961,12 @@ class Adminer {
 				$connection->select_db(DB);
 				$tables = table_status('', true);
 			}
-			echo script_src("../externals/jush/modules/jush.js");
-			echo script_src("../externals/jush/modules/jush-textarea.js");
-			echo script_src("../externals/jush/modules/jush-txt.js");
-			echo script_src("../externals/jush/modules/jush-js.js");
+			echo script_src("./adminer/externals/jush/modules/jush.js");
+			echo script_src("./adminer/externals/jush/modules/jush-textarea.js");
+			echo script_src("./adminer/externals/jush/modules/jush-txt.js");
+			echo script_src("./adminer/externals/jush/modules/jush-js.js");
 			if (support("sql")) {
-				echo script_src("../externals/jush/modules/jush-$jush.js");
+				echo script_src("./adminer/externals/jush/modules/jush-$jush.js");
 				?>
 <script<?php echo nonce(); ?>>
 <?php
